@@ -1,6 +1,5 @@
 package com.skilldistillery.fightsim.entities;
 
-import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,104 +7,52 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Table;
 
 @Entity
-public class Fighter {
+@Table(name="power_bracket")
+public class PowerBracket {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String Name;
+	private String name;
 	private String description;
-	@Column(name = "image_url")
+	@Column(name="image_url")
 	private String imageUrl;
 	
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name = "universe_id")
-	private Universe universe;
-	
-	@JsonIgnore
-	@ManyToOne
-	@JoinColumn(name = "power_bracket_id")
-	private PowerBracket powerBracket;
-	
-	@JsonIgnore
-	@OneToMany(mappedBy = "id")
-	private List<Fight> fights;
-	
-
-	public void setFights(List<Fight> fights) {
-		this.fights = fights;
-	}
-
-	public Fighter() {
+	public PowerBracket() {
 		super();
 	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public List<Fight> getFights() {
-		return fights;
-	}
-
 	public String getName() {
-		return Name;
+		return name;
 	}
-
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
-
 	public String getDescription() {
 		return description;
 	}
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
 	public String getImageUrl() {
 		return imageUrl;
 	}
-
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
-
-	public Universe getUniverse() {
-		return universe;
-	}
-
-	public void setUniverse(Universe universe) {
-		this.universe = universe;
-	}
-
-	public PowerBracket getPowerBracket() {
-		return powerBracket;
-	}
-
-	public void setPowerBracket(PowerBracket powerBracket) {
-		this.powerBracket = powerBracket;
-	}
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -114,12 +61,12 @@ public class Fighter {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Fighter other = (Fighter) obj;
+		PowerBracket other = (PowerBracket) obj;
 		return id == other.id;
 	}
-
 	@Override
 	public String toString() {
-		return "Fighter [id=" + id + ", Name=" + Name + "]";
+		return "PowerBracket [id=" + id + ", name=" + name + ", description=" + description + ", imageUrl=" + imageUrl
+				+ "]";
 	}
 }
