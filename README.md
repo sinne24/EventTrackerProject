@@ -2,7 +2,7 @@
 
 ### Description
 
-    The fight simulator event tracker is a virtual log for "who would win"
+  The fight simulator event tracker is a virtual log for "who would win"
   discussions featuring fight scenarios between popular fictional characters
   from several universes. Characters fall within one of the following universes:
 
@@ -50,10 +50,13 @@ hours chasing a phantom bug because I was not inputting my post body correctly
 on postman. After reaching out to a peer they noticed my mistake and showed me
 how my input was incorrect. Had I better understood the technology I was
 implementing I would have saved myself hours of headache chasing around a bug
-that didn't exist. 
+that didn't exist.
 
 ### Future Updates
--Fights
+- Fight Controller CRUD mapping to begin logging scenarios.
+- Add images to database fighters
+- Build out more niche universes
+- Format into mobile app compatible UI, to be able to update log in real time.
 
 ### Endpoints
 - When creating a new fighter, their universe and power bracket cannot be null.
