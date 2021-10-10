@@ -5,7 +5,7 @@
   The fight simulator event tracker is a virtual log for "who would win"
   discussions featuring fight scenarios between popular fictional characters
   from several universes. Characters fall within one of the following universes:
-  
+
   - 1.) Marvel
   - 2.) DC
   - 3.) Anime
@@ -28,14 +28,15 @@
   - 3.) Super Duper: fighters with the kind of powers that could decimate their
                      local surroundings like cities or mountains. Examples are
                      Superman, Thor, and Wile E Coyote.
+
         *Exceptions are made in this category for individuals who may
         not match the physical strength of characters like Superman, but have
         extreme speed powers which make them unreasonable match-ups for the
         fighters in bracket 2. Examples are the Flash, and Vampire Hunter D.*
 
   - 4.) Planet Destroyers: fighters whose abilities make them capable of
-  contending against cosmic entities. Examples are Goku, Silver Surfer, and
-  Dr. Manhattan.
+                           contending against cosmic entities. Examples are Goku,
+                           Silver Surfer, and Dr. Manhattan.
 
 ### Technologies
 - Eclipse IDE
