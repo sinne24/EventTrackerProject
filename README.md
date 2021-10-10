@@ -1,7 +1,8 @@
 # EventTrackerProject: Fight Sim
 
 ### Description
-    The fight simulator event tracker is a virtual log for "who would win"
+
+  The fight simulator event tracker is a virtual log for "who would win"
   discussions featuring fight scenarios between popular fictional characters
   from several universes. Characters fall within one of the following universes:
   - 1.) Marvel
