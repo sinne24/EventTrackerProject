@@ -2,9 +2,15 @@ package com.skilldistillery.fightsim;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class FightSimulatorApplication {
+public class FightSimulatorApplication extends SpringBootServletInitializer {
+	  @Override
+	  protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	    return application.sources(FightSimulatorApplication.class);
+	  }
 
 	public static void main(String[] args) {
 		SpringApplication.run(FightSimulatorApplication.class, args);

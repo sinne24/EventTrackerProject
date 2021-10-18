@@ -40,17 +40,8 @@ public class FighterController {
 	
 	@PostMapping("fighters")
 	public Fighter createFighter(@RequestBody Fighter fighter, HttpServletRequest request, HttpServletResponse response){
-		try {
 			fighter = fighterSvc.create(fighter);
-			response.setStatus(201);
-			StringBuffer url = request.getRequestURL();
-			url.append(fighter.getId());
-			String urlstr = url.toString();
-			response.setHeader("Location", urlstr);
-		} catch (Exception e) {
-			response.setStatus(400);
-			fighter = null;
-		}
+
 		return fighter;
 	}
 	

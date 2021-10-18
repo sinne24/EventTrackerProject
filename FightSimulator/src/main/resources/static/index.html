@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Fight!</title>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<h1>Choose your player</h1>
+
+
+  <form name="fighterForm">
+    <input type="number" name="fighterId">
+    <button name="lookup">Get Fighter by Id</button>
+  </form>
+  <div id="output">
+    <div id="fighterData"></div>
+ <!--    <div id="actorData"></div> -->
+  </div>
+  
+  <form name="addFighterForm">
+  <input type="text" name="name" placeholder="Name">
+  <br>
+  <textarea rows="3" cols="40" name="description" placeholder="Description"> </textarea>
+  <br>
+   <input type="number" name="universe" placeholder="universe">
+   <br>
+   <input type="number" name="powerBracket" placeholder="Power Bracket">
+   <br>
+   <input type="text" name="imageUrl" placeholder="Image address URL">
+   <br>
+   <button name="addFighter"> Add Fighter </button>
+  </form>
+
+</body>
+</html>

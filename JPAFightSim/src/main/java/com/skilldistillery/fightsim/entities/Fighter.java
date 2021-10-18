@@ -26,12 +26,10 @@ public class Fighter {
 	@Column(name = "image_url")
 	private String imageUrl;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "universe_id")
 	private Universe universe;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "power_bracket_id")
 	private PowerBracket powerBracket;
@@ -41,12 +39,13 @@ public class Fighter {
 	private List<Fight> fights;
 	
 
-	public void setFights(List<Fight> fights) {
-		this.fights = fights;
-	}
 
 	public Fighter() {
 		super();
+	}
+	
+	public void setFights(List<Fight> fights) {
+		this.fights = fights;
 	}
 
 	public int getId() {
