@@ -11,6 +11,8 @@ export class FighterListComponent implements OnInit {
 
   fighters: Fighter[] = [];
 
+  selected: Fighter | null = null;
+
   constructor(
     private fighterService: FighterService
   ) { }
@@ -30,6 +32,9 @@ export class FighterListComponent implements OnInit {
     }
 
     );
+  }
+  displayFighter(fighter: Fighter): void {
+    this.selected = fighter;
   }
 
 }

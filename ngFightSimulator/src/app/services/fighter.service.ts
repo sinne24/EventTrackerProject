@@ -24,4 +24,14 @@ export class FighterService {
       })
     );
   }
+
+  show(fighterId: number): Observable<Fighter> {
+    return this.http.get<Fighter>(this.url + '/' + fighterId).pipe(
+      catchError((err: any) => {
+        console.log(err);
+        return throwError('TodoService.show(): Error retrieving todo');
+      })
+    );
+  }
+
 }
