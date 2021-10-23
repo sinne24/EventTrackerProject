@@ -21,3 +21,10 @@
     </tr>
   </tbody>
 </table>
+
+<div id='fighterDetails' *ngIf="selected">
+  <h4>{{selected.id}}</h4>
+  <h3>{{selected.name}}</h3>
+  <p>{{selected.desc}}</p>
+  <p>{{selected.img}}</p>
+</div>
