@@ -15,16 +15,22 @@
     <tr *ngFor="let fighter of fighters">
       <td (click)="displayFighter(fighter)">{{ fighter.id }}</td>
       <td (click)="displayFighter(fighter)">{{ fighter.name }}</td>
-      <td (click)="displayFighter(fighter)">{{ fighter.desc}}</td>
-      <td (click)="displayFighter(fighter)">{{ fighter.img}}</td>
+      <td (click)="displayFighter(fighter)">{{ fighter.description}}</td>
+      <td (click)="displayFighter(fighter)" style="height: 100px; width: 150px">
+        <img src="{{ fighter.imageUrl}}" alt= "{{ fighter.name }}" style="height: 150px; width: 175px">
+      </td>
       <!-- <td><button (click)="deleteTodo(todo.id)">X</button>></td> -->
     </tr>
   </tbody>
 </table>
+<form name="newFighter" *ngIf="newFighter" class="form form-inline">
+  <input class="form-control" type="text" name="name" [(ngModel)]="newFighter.name" />
+  <button class="btn btn-primary" (click)="addFighter(newFighter)">Add Fighter</button>
+</form>
 
 <div id='fighterDetails' *ngIf="selected">
   <h4>{{selected.id}}</h4>
   <h3>{{selected.name}}</h3>
-  <p>{{selected.desc}}</p>
-  <p>{{selected.img}}</p>
+  <p>{{selected.description}}</p>
+  <img src="{{ selected.imageUrl}}" alt= "{{ selected.name }}" style="height: 200px; width: 225px">
 </div>

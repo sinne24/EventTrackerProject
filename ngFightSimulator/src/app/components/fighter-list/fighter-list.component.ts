@@ -10,7 +10,7 @@ import { FighterService } from 'src/app/services/fighter.service';
 export class FighterListComponent implements OnInit {
 
   fighters: Fighter[] = [];
-
+  newFighter: Fighter | null = new Fighter();
   selected: Fighter | null = null;
 
   constructor(
@@ -19,6 +19,18 @@ export class FighterListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadFighters();
+  }
+
+  reloadFighters(): void {
+    this.fighterService.index().subscribe(
+      fighterList => {
+        this.fighters = fighterList;
+      },
+      fail => {
+        console.error('TodoListComponent.reloadTodos(): error getting todo list');
+        console.log(fail);
+      }
+    );
   }
 
   loadFighters(){
@@ -35,6 +47,20 @@ export class FighterListComponent implements OnInit {
   }
   displayFighter(fighter: Fighter): void {
     this.selected = fighter;
+    //console.log(fighter);
+    console.log(this.selected);
+  }
+
+  addFighter(fighter: Fighter) {
+    this.fighterService.create(fighter).subscribe(
+      newFighter => {
+        this.reloadFighters();
+        this.newFighter = new Fighter();
+      },
+      fail => {
+        console.error(fail)
+      }
+    );
   }
 
 }

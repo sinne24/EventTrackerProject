@@ -34,4 +34,16 @@ export class FighterService {
     );
   }
 
+  create(fighter: Fighter): Observable<Fighter>{
+    fighter.id = 0;
+    fighter.name = '';
+    fighter.description= '';
+    fighter.imageUrl = '';
+    return this.http.post<Fighter>(this.url, fighter).pipe();
+    catchError((err: any) => {
+      console.log(err);
+      return throwError('TodoService.create(): ');
+    })
+
+  }
 }
