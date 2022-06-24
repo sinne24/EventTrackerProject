@@ -47,7 +47,8 @@
 ### Technologies
 - Eclipse IDE
 - MySQL
-- postman
+- Postman
+-Visual Studio
 
 ### Lessons Learned
 #### Week 1
